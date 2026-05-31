@@ -1,1 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Likitha</title>
+  <style>
+    :root {
+      --bg1: #fff1f5;
+      --bg2: #fde2e4;
+      --accent: #b23a48;
+      --accent2: #d66b7a;
+      --text: #5c2730;
+      --card: rgba(255, 255, 255, 0.72);
+      --shadow: 0 18px 50px rgba(178, 58, 72, 0.18);
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top, #fffafc 0%, transparent 38%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      position: relative;
+    }
+
+    .floaters {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 18px;
+      opacity: 0.35;
+      animation: floatUp linear infinite;
+      filter: blur(0.1px);
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(110vh) scale(0.8);
+      }
+      to {
+        transform: translateY(-15vh) scale(1.25);
+      }
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 760px;
+      display: grid;
+      gap: 18px;
+      justify-items: center;
+    }
+
+    .badge {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .card {
+      width: 100%;
+      background: var(--card);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(178, 58, 72, 0.12);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 34px 26px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(214,107,122,0.18), transparent 65%);
+      filter: blur(3px);
+    }
+
+    .title {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 58px);
+      line-height: 1.05;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      margin: 14px auto 0;
+      max-width: 560px;
+      font-size: clamp(16px, 2.2vw, 20px);
+      line-height: 1.7;
+      color: #6f4250;
+    }
+
+    .type {
+      display: inline-block;
+      border-right: 2px solid rgba(178, 58, 72, 0.8);
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(31, end) forwards, blink 0.8s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .buttons {
+      margin-top: 26px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+
+    .primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+      box-shadow: 0 12px 24px rgba(178, 58, 72, 0.24);
+    }
+
+    .ghost {
+      background: rgba(255,255,255,0.72);
+      color: var(--accent);
+      border: 1px solid rgba(178, 58, 72, 0.15);
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .message {
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(178, 58, 72, 0.1);
+      text-align: center;
+    }
+
+    .message h2 {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: clamp(22px, 3vw, 32px);
+    }
+
+    .message p {
+      margin: 0;
+      line-height: 1.8;
+      font-size: 17px;
+      color: #6f4250;
+    }
+
+    .footer {
+      margin-top: 2px;
+      font-size: 12px;
+      color: rgba(92, 39, 48, 0.6);
+      text-align: center;
+    }
+
+    .pulse {
+      display: inline-block;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 28px 18px;
+        border-radius: 24px;
+      }
+
+      .subtitle {
+        line-height: 1.6;
+      }
+
+      button {
+        width: 100%;
+      }
+
+      .buttons {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="floaters" id="floaters"></div>
+
+  <main class="wrap">
+    <div class="badge">A message for one person only</div>
+
+    <section class="card">
+      <h1 class="title"><span class="pulse">💗</span> LIKITHA <span class="pulse">💗</span></h1>
+
+      <p class="subtitle">
+        <span class="type">I AM MISSING YOU A LOT, LIKITHA</span>
+      </p>
+
+      <div class="buttons">
+        <button class="primary" id="openBtn">Open My Heart</button>
+        <button class="ghost" id="noteBtn">Read a Note</button>
+      </div>
+
+      <div class="message hidden" id="noteBox">
+        <h2>For Likitha</h2>
+        <p>
+          Every second feels a little incomplete without you.
+          I just wanted this small page to say what my heart has been holding in silence:
+          I am missing you a lot, Likitha.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">Made with love ✨</div>
+  </main>
+
+  <script>
+    const floaters = document.getElementById("floaters");
+    const hearts = ["💗", "💖", "💕", "🌸", "🌷"];
+
+    for (let i = 0; i < 28; i++) {
+      const span = document.createElement("span");
+      span.className = "heart";
+      span.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      span.style.left = Math.random() * 100 + "vw";
+      span.style.animationDuration = (10 + Math.random() * 12) + "s";
+      span.style.animationDelay = (-Math.random() * 20) + "s";
+      span.style.fontSize = (14 + Math.random() * 18) + "px";
+      floaters.appendChild(span);
+    }
+
+    const noteBtn = document.getElementById("noteBtn");
+    const noteBox = document.getElementById("noteBox");
+    const openBtn = document.getElementById("openBtn");
+
+    noteBtn.addEventListener("click", () => {
+      noteBox.classList.toggle("hidden");
+      noteBtn.textContent = noteBox.classList.contains("hidden") ? "Read a Note" : "Hide Note";
+    });
+
+    openBtn.addEventListener("click", () => {
+      noteBox.classList.remove("hidden");
+      noteBtn.textContent = "Hide Note";
+      document.querySelector(".card").scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  </script>
+</body>
+</html>
