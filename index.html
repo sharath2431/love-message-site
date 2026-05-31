@@ -10,21 +10,21 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
     overflow:hidden;
 }
 
 .container{
     width:90%;
-    max-width:700px;
+    max-width:750px;
     background:white;
     padding:35px;
     border-radius:25px;
@@ -41,23 +41,24 @@ h1{
 
 .message{
     font-size:22px;
-    color:#444;
     line-height:1.8;
-    min-height:180px;
+    color:#444;
+    min-height:250px;
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:15px;
+    flex-direction:column;
+    padding:20px;
 }
 
 button{
     background:#ff3366;
     color:white;
     border:none;
-    padding:14px 30px;
+    padding:15px 35px;
     border-radius:30px;
-    cursor:pointer;
     font-size:18px;
+    cursor:pointer;
 }
 
 button:hover{
@@ -90,7 +91,7 @@ button:hover{
 
 <div class="container">
 
-<h1>💖 I AM MISSING YOU A LOT LIKITHA 💖</h1>
+<h1>❤️ FOR LIKITHA ❤️</h1>
 
 <div class="message" id="message">
 Press "Open My Heart ❤️"
@@ -106,33 +107,20 @@ Open My Heart ❤️
 
 const messages = [
 
-"😭❤️ Likitha... Before you read anything, I just want you to know one thing... I miss you more than words can explain.",
+"Hii ma ela unav ❤️<br><br>I hope you will read this msg.<br><br>Chala days ayindi kadha beta manam matladi.<br><br>Nak ela start cheyalo ardam avvatle kani e msg netho okasri call matladinkanaka pedutham anukuntunn ra.<br><br>Next kottu ma ❤️",
 
-"Likitha, I am missing you a lot 😭❤️",
+"30 days ayindi ma nen netho matladi.<br><br>Chala miss avthunna ninnu.<br><br>Unnapudu arichina kani nadhe thappu.<br><br>Enthala miss avthunano cheppalene.<br><br>Intlo chala days unav contact avdham ani chala sarlu anukunna kani family untaru ani agipoyina.<br><br>Ochinaka matladudham ani anukunna 😭❤️",
 
-"As days pass you may think I am forgetting you... But roju rojuki chala ante chala mental ekkisthunnav 😔",
+"Roju rojuki pichi lesthundi maa.<br><br>I know I have messed up a lot.<br><br>Chala matalu anna, chala hurt chesa.<br><br>Asal sorry cheppe right kuda ledhu naku.<br><br>And you know what...",
 
-"I don't know if you realize it, but I miss you more than I can put into words ❤️",
+"Anipisthundi naku ninnu chance kuda adugalenu ani.<br><br>Because you already gave me a second chance.<br><br>But I can't lose you from my life.<br><br>I AM SO SORRY MY LOVE ❤️😭",
 
-"Ela unnav ma 😭🥺😭 Chala days avthundhe ni gonthu vini...",
+"Manaki this is the last hope in love.<br><br>I miss you badly.<br><br>Asal kasepu kuda gurthu rakunda undavu telsa.<br><br>Sare rest nik call lo cheppi unta.<br><br>I LOVE YOU ❤️",
 
-"30 days ayipoyayi mana matladukoni 😔",
+"Please don't forget to fulfill my 2 wishes which I have asked you 🥺❤️",
 
-"Every day I check my phone hoping to see a message from you ❤️",
+"AT LAST ❤️<br><br>I DON'T KNOW WHAT DESTINY HAS PLANNED FOR US.<br><br>BUT I KNOW 1 THING...<br><br>I CAN'T UNLOVE YOU ❤️😭"
 
-"No matter how angry you are with me, you are still my favourite person ❤️",
-
-"I never wanted to hurt you 😭",
-
-"I LOVE YOU MAAA ❤️",
-
-"I AM VERY SORRY FOR EVERYTHING WHAT I HAVE DONE 🙏😭",
-
-"If possible please forgive me 🥺❤️",
-
-"Forever waiting for your smile again 😭❤️",
-
-"❤️ LOVE YOU LIKITHA ❤️"
 ];
 
 let index = -1;
@@ -143,37 +131,35 @@ index++;
 
 if(index < messages.length){
 
-document.getElementById("message").innerHTML =
-messages[index];
+document.getElementById("message").innerHTML = messages[index];
 
-document.getElementById("mainBtn").innerHTML =
-"Next ❤️";
+document.getElementById("mainBtn").innerHTML = "Next ❤️";
 
 }
 else{
 
 document.getElementById("message").innerHTML =
-"❤️ THANK YOU FOR READING ❤️<br><br>Likitha, I Love You Maaa 😭❤️";
+"❤️ THANK YOU FOR READING ❤️<br><br>I LOVE YOU LIKITHA ❤️";
 
-document.getElementById("mainBtn").style.display =
-"none";
+document.getElementById("mainBtn").style.display = "none";
+
 }
+
 }
 
 function createHeart(){
 
-const heart = document.createElement("div");
+const heart=document.createElement("div");
 
 heart.classList.add("heart");
 
-heart.innerHTML = "❤️";
+heart.innerHTML="❤️";
 
-heart.style.left = Math.random()*100 + "vw";
+heart.style.left=Math.random()*100+"vw";
 
-heart.style.fontSize = (20 + Math.random()*25) + "px";
+heart.style.fontSize=(20+Math.random()*25)+"px";
 
-heart.style.animationDuration =
-(5 + Math.random()*5) + "s";
+heart.style.animationDuration=(5+Math.random()*5)+"s";
 
 document.body.appendChild(heart);
 
