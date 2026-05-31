@@ -7,111 +7,97 @@
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4);
-overflow:hidden;
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
 }
 
 .container{
-width:90%;
-max-width:700px;
-background:white;
-padding:30px;
-border-radius:25px;
-box-shadow:0 0 30px rgba(0,0,0,0.2);
-text-align:center;
-position:relative;
-z-index:2;
+    width:90%;
+    max-width:700px;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    position:relative;
+    z-index:2;
 }
 
 h1{
-color:#ff3366;
-margin-bottom:20px;
+    color:#ff3366;
+    margin-bottom:20px;
 }
 
 .message{
-font-size:22px;
-line-height:1.8;
-color:#444;
-min-height:180px;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
+    font-size:22px;
+    color:#444;
+    line-height:1.8;
+    min-height:180px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
 }
 
 button{
-padding:15px 35px;
-border:none;
-border-radius:30px;
-background:#ff3366;
-color:white;
-font-size:18px;
-cursor:pointer;
+    background:#ff3366;
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
 }
 
 button:hover{
-transform:scale(1.05);
+    transform:scale(1.05);
 }
 
 .heart{
-position:absolute;
-font-size:25px;
-animation:float 8s linear infinite;
-opacity:0.6;
+    position:absolute;
+    color:red;
+    animation:float 8s linear infinite;
 }
 
 @keyframes float{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-10%{
-opacity:1;
-}
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-}
-
-#musicBtn{
-margin-top:15px;
-background:#ff6699;
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<audio id="bgmusic" loop>
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-</audio>
-
 <div class="container">
 
 <h1>💖 I AM MISSING YOU A LOT LIKITHA 💖</h1>
 
 <div class="message" id="message">
-Click below 😭❤️
+Press "Open My Heart ❤️"
 </div>
 
-<button onclick="nextMessage()">Read My Heart ❤️</button>
-
-<br>
-
-<button id="musicBtn" onclick="playMusic()">
-🎵 Play Music
+<button id="mainBtn" onclick="nextMessage()">
+Open My Heart ❤️
 </button>
 
 </div>
@@ -119,6 +105,8 @@ Click below 😭❤️
 <script>
 
 const messages = [
+
+"😭❤️ Likitha... Before you read anything, I just want you to know one thing... I miss you more than words can explain.",
 
 "Likitha, I am missing you a lot 😭❤️",
 
@@ -154,32 +142,38 @@ function nextMessage(){
 index++;
 
 if(index < messages.length){
+
 document.getElementById("message").innerHTML =
 messages[index];
+
+document.getElementById("mainBtn").innerHTML =
+"Next ❤️";
+
 }
 else{
-document.getElementById("message").innerHTML =
-"❤️ Thank You For Reading ❤️<br><br>I Love You Maaa 😭❤️";
-}
-}
 
-function playMusic(){
-document.getElementById("bgmusic").play();
+document.getElementById("message").innerHTML =
+"❤️ THANK YOU FOR READING ❤️<br><br>Likitha, I Love You Maaa 😭❤️";
+
+document.getElementById("mainBtn").style.display =
+"none";
+}
 }
 
 function createHeart(){
 
-const heart=document.createElement("div");
+const heart = document.createElement("div");
 
 heart.classList.add("heart");
 
-heart.innerHTML="❤️";
+heart.innerHTML = "❤️";
 
-heart.style.left=Math.random()*100+"vw";
+heart.style.left = Math.random()*100 + "vw";
 
-heart.style.fontSize=(20+Math.random()*30)+"px";
+heart.style.fontSize = (20 + Math.random()*25) + "px";
 
-heart.style.animationDuration=(5+Math.random()*5)+"s";
+heart.style.animationDuration =
+(5 + Math.random()*5) + "s";
 
 document.body.appendChild(heart);
 
