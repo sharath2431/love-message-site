@@ -60,6 +60,7 @@ border-radius:30px;
 font-size:18px;
 cursor:pointer;
 margin:8px;
+transition:0.3s;
 }
 
 button:hover{
@@ -114,19 +115,15 @@ Open My Heart ❤️
 
 const messages = [
 
-"Hii ma ela unav ❤️<br><br>I hope you will read this msg.<br><br>Chala days ayindi kadha beta manam matladi.<br><br>Nak ela start cheyalo ardam avvatle kani e msg netho okasri call matladinkanaka pedutham anukuntunn ra.<br><br>Next kottu ma ❤️",
+"Hii Likitha ❤️<br><br>Ela unav... Ninnu chala miss avthunna ra. I miss you a lot. 🥺❤️<br><br>Happy ga undu beta, devudini adigesa nuvvu happy ga undalani. ❤️<br><br>Sorry, ninnu ibbandi pettali ani kadhu ra. Okkasari ee message motham chadhuvu. 🥺<br><br>Next kottu ma ❤️",
 
-"30 days ayindi ma nen netho matladi.<br><br>Chala miss avthunna ninnu.<br><br>Unnapudu arichina kani nadhe thappu.<br><br>Enthala miss avthunano cheppalene.<br><br>Intlo chala days unav contact avdham ani chala sarlu anukunna kani family untaru ani agipoyina.<br><br>Ochinaka matladudham ani anukunna 😭❤️",
+"Likitha... Sorry ra. 😔❤️<br><br>Navi chala mistakes unnayi. Ninnu ala ani undakudadhu ra.<br><br>Chala regret ga undi naku.<br><br>Ni daggara nak ego em ledhu ra.<br><br>Please epudu nak ego undi ani anukoku sare na. 🥺<br><br>Ni tarvathane nak em ayina. ❤️",
 
-"Roju rojuki pichi lesthundi maa.<br><br>I know I have messed up a lot.<br><br>Chala matalu anna, chala hurt chesa.<br><br>Asal sorry cheppe right kuda ledhu naku.<br><br>And you know what...",
+"Inka ninnu malla epudu chusthano maa telidhu. 😭❤️<br><br>Ee month end tarvatha chala benga ga undi.<br><br>Niku dooram vellipovali ani asal ledhu ra.<br><br>Ni kosam eppatiki wait chesthu unta beta.<br><br>Any second... just oka message chey chalu. 🥺❤️",
 
-"Anipisthundi naku ninnu chance kuda adugalenu ani.<br><br>Because you already gave me a second chance.<br><br>But I can't lose you from my life.<br><br>I AM SO SORRY MY LOVE ❤️😭",
+"I AM SO SORRY MY LOVE ❤️😭<br><br>Manaki this is the last hope in love.<br><br>I miss you badly. 🥺<br><br>Asal kasepu kuda gurthu rakunda undavu telsa.<br><br>I LOVE YOU ❤️",
 
-"Manaki this is the last hope in love.<br><br>I miss you badly.<br><br>Asal kasepu kuda gurthu rakunda undavu telsa.<br><br>Sare rest nik call lo cheppi unta.<br><br>I LOVE YOU ❤️",
-
-"Please don't forget to fulfill my 2 wishes which I have asked you 🥺❤️",
-
-"AT LAST ❤️<br><br>I DON'T KNOW WHAT DESTINY HAS PLANNED FOR US.<br><br>BUT I KNOW 1 THING...<br><br>I CAN'T UNLOVE YOU ❤️😭"
+"Ninnu em disturb cheyanu beta inka. 🥺❤️<br><br>Dhinki kuda ibbandhi ga unte so sorry ra.<br><br>Mana memories tho life long undipovachu.<br><br>Nannu marchipoke. 🥺❤️<br><br>Bye Likithaaaaaa... ❤️😭"
 
 ];
 
@@ -139,11 +136,9 @@ index++;
 if(index < messages.length){
 
 document.getElementById("message").innerHTML = messages[index];
-
 document.getElementById("mainBtn").innerHTML = "Next ❤️";
 
-}
-else{
+}else{
 
 document.getElementById("message").innerHTML =
 "❤️ THANK YOU FOR READING ❤️<br><br>I LOVE YOU LIKITHA ❤️";
@@ -167,9 +162,7 @@ heart.classList.add("heart");
 heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
-
 heart.style.fontSize=(20+Math.random()*25)+"px";
-
 heart.style.animationDuration=(5+Math.random()*5)+"s";
 
 document.body.appendChild(heart);
