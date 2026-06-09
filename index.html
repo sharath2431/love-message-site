@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,8 +100,6 @@ opacity:0;
 
 <h1>❤️ FOR LIKITHA ❤️</h1>
 
-<button onclick="playMusic()">🎵 Play Music</button>
-
 <div class="message" id="message">
 Press "Open My Heart ❤️"
 </div>
@@ -128,8 +127,14 @@ const messages = [
 ];
 
 let index = -1;
+let musicStarted = false;
 
 function nextMessage(){
+
+if(!musicStarted){
+document.getElementById("bgMusic").play();
+musicStarted = true;
+}
 
 index++;
 
@@ -147,10 +152,6 @@ document.getElementById("mainBtn").style.display = "none";
 
 }
 
-}
-
-function playMusic(){
-document.getElementById("bgMusic").play();
 }
 
 function createHeart(){
@@ -179,3 +180,4 @@ setInterval(createHeart,500);
 
 </body>
 </html>
+```
