@@ -38,6 +38,7 @@ z-index:2;
 h1{
 color:#ff3366;
 margin-bottom:20px;
+font-size:42px;
 }
 
 .message{
@@ -60,7 +61,7 @@ padding:15px 35px;
 border-radius:30px;
 font-size:18px;
 cursor:pointer;
-margin:8px;
+margin-top:15px;
 transition:0.3s;
 }
 
@@ -72,6 +73,7 @@ transform:scale(1.05);
 position:absolute;
 color:red;
 animation:float 8s linear infinite;
+pointer-events:none;
 }
 
 @keyframes float{
@@ -85,6 +87,15 @@ opacity:1;
 100%{
 transform:translateY(-120vh);
 opacity:0;
+}
+}
+
+@media(max-width:600px){
+.message{
+font-size:18px;
+}
+h1{
+font-size:32px;
 }
 }
 </style>
@@ -114,13 +125,17 @@ Open My Heart ❤️
 
 const messages = [
 
-"Hii Likitha ❤️<br><br>Ela unav... Ninnu chala miss avthunna ra. I miss you a lot. 🥺❤️<br><br>Happy ga undu beta, devudini adigesa nuvvu happy ga undalani. ❤️<br><br>Sorry, ninnu ibbandi pettali ani kadhu ra. Okkasari ee message motham chadhuvu. 🥺<br><br>Next kottu ma ❤️",
+"Hii Likitha ❤️<br><br>Ela unav... Ninnu chala miss avthunna ra. I miss you a lot. 🥺❤️<br><br>Happy ga undu beta, devudini adigesa nuvvu happy ga undalani. ❤️<br><br>Next kottu ma ❤️",
 
-"Likitha... Sorry ra. 😔❤️<br><br>Navi chala mistakes unnayi. Ninnu ala ani undakudadhu ra.<br><br>Chala regret ga undi naku.<br><br>Ni daggara nak ego em ledhu ra.<br><br>Please epudu nak ego undi ani anukoku sare na. 🥺<br><br>Ni tarvathane nak em ayina. ❤️",
+"Sorry, ninnu ibbandi pettali ani kadhu ra. Okkasari ee message motham chadhuvu. 🥺<br><br>Likitha... Sorry ra. 😔❤️<br><br>Navi chala mistakes unnayi. Ninnu ala ani undakudadhu ra.<br><br>Chala regret ga undi naku.",
 
-"Inka ninnu malla epudu chusthano maa telidhu. 😭❤️<br><br>Ee month end tarvatha chala benga ga undi.<br><br>Niku dooram vellipovali ani asal ledhu ra.<br><br>Ni kosam eppatiki wait chesthu unta beta.<br><br>Any second... just oka message chey chalu. 🥺❤️",
+"Ni daggara nak ego em ledhu ra.<br><br>Please epudu nak ego undi ani anukoku sare na. 🥺<br><br>Ni tarvathane nak em ayina. ❤️",
 
-"I AM SO SORRY MY LOVE ❤️😭<br><br>Manaki this is the last hope in love.<br><br>I miss you badly. 🥺<br><br>Asal kasepu kuda gurthu rakunda undavu telsa.<br><br>I LOVE YOU ❤️",
+"Inka ninnu malla epudu chusthano maa telidhu. 😭❤️<br><br>Ee month end tarvatha chala benga ga undi.<br><br>Niku dooram vellipovali ani asal ledhu ra.",
+
+"Ni kosam eppatiki wait chesthu unta beta.<br><br>Any second... just oka message chey chalu. 🥺❤️<br><br>I AM SO SORRY MY LOVE ❤️😭",
+
+"Manaki this is the last hope in love.<br><br>I miss you badly. 🥺<br><br>Asal kasepu kuda gurthu rakunda undavu telsa.<br><br>I LOVE YOU ❤️",
 
 "Ninnu em disturb cheyanu beta inka. 🥺❤️<br><br>Dhinki kuda ibbandhi ga unte so sorry ra.<br><br>Mana memories tho life long undipovachu.<br><br>Nannu marchipoke. 🥺❤️<br><br>Bye Likithaaaaaa... ❤️😭"
 
@@ -141,12 +156,17 @@ index++;
 if(index < messages.length){
 
 document.getElementById("message").innerHTML = messages[index];
+
+if(index === messages.length - 1){
+document.getElementById("mainBtn").innerHTML = "Final Page ❤️";
+}else{
 document.getElementById("mainBtn").innerHTML = "Next ❤️";
+}
 
 }else{
 
 document.getElementById("message").innerHTML =
-"❤️ THANK YOU FOR READING ❤️<br><br>I LOVE YOU LIKITHA ❤️";
+"❤️ FOR LIKITHA ❤️<br><br>❤️ THANK YOU FOR READING ❤️<br><br>I LOVE YOU LIKITHA ❤️";
 
 document.getElementById("mainBtn").style.display = "none";
 
@@ -156,15 +176,14 @@ document.getElementById("mainBtn").style.display = "none";
 
 function createHeart(){
 
-const heart=document.createElement("div");
+const heart = document.createElement("div");
 
 heart.classList.add("heart");
+heart.innerHTML = "❤️";
 
-heart.innerHTML="❤️";
-
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(20+Math.random()*25)+"px";
-heart.style.animationDuration=(5+Math.random()*5)+"s";
+heart.style.left = Math.random()*100 + "vw";
+heart.style.fontSize = (20 + Math.random()*25) + "px";
+heart.style.animationDuration = (5 + Math.random()*5) + "s";
 
 document.body.appendChild(heart);
 
